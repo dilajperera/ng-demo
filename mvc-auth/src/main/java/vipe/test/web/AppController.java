@@ -58,8 +58,8 @@ public class AppController {
    */
   @RequestMapping(value = { "/list.html" }, method = RequestMethod.GET)
   public String listUsers(ModelMap model) {
-    System.out.println("Rendering the list.html ..... [][][][][][][][][] ");
-    return "list";
+      model.addAttribute("employees", employeeService.findAllEmployees());
+      return "list";
   }
 
   @RequestMapping(value = "/access_denied", method = RequestMethod.GET)

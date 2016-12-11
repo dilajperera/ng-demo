@@ -18,48 +18,48 @@
 
 <div class="container">
 
-        <div class="row" style="margin-left:0px;padding-bottom:25px; ">
-            <div class="col-sm-5">
-                <input class="form-control" placeholder="search..." >
-            </div>
+    <div class="row" style="margin-left:0px;padding-bottom:25px; ">
+        <div class="col-sm-5">
+            <input class="form-control" placeholder="search...">
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th></th>
-                        <th></th>
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${employees}" var="employee">
+                    <tr class="info">
+                        <td>${employee.name}</td>
+                        <td>${employee.age}</td>
+                        <td>${employee.salary}</td>
+                        <td>
+                            <button value="Edit" class="btn btn-primary">Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button type="submit" value="Edit" class="btn btn-primary">Delete
+                            </button>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <%--<tr class="info" ng-repeat="std in studentList | filter:searchText">
-                        <td>{{ std.firstName }}</td>
-                        <td>{{ std.lastName}}</td>
-                        <td>{{ std.email}}</td>
-                        <td>
-                            <button ng-click="editStudent(std)" value="Edit"
-                                    class="btn btn-primary">Edit
-                            </button>
-                        </td>
-                        <td>
-                            <button type="submit" ng-click="deleteStudent(std)"
-                                    value="Edit" class="btn btn-primary">Delete
-                            </button>
-                        </td>
-                    </tr>--%>
-                    </tbody>
-                </table>
-            </div>
-
-            <div ng-if="showEditPanel" class="col-sm-6" style="padding:40px; outline: 0.25px solid black;">
-                <div std-detail></div>
-            </div>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
+
+        <div ng-if="showEditPanel" class="col-sm-6" style="padding:40px; outline: 0.25px solid black;">
+            <div std-detail></div>
+        </div>
+    </div>
 </div>
 
 
