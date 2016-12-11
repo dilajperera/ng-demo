@@ -1,0 +1,51 @@
+<div ng-controller="mainCtrl">
+    <div header-template></div>
+</div>
+
+<div class="container">
+    <div ng-controller="studentCtrl">
+
+        <div class="row" style="margin-left:0px;padding-bottom:25px; ">
+            <div class="col-sm-5">
+                <input class="form-control" placeholder="search..." ng-model="searchText">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="info" ng-repeat="std in studentList | filter:searchText">
+                        <td>{{ std.firstName }}</td>
+                        <td>{{ std.lastName}}</td>
+                        <td>{{ std.email}}</td>
+                        <td>
+                            <button ng-click="editStudent(std)" value="Edit"
+                                    class="btn btn-primary">Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button type="submit" ng-click="deleteStudent(std)"
+                                    value="Edit" class="btn btn-primary">Delete
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div ng-if="showEditPanel" class="col-sm-6" style="padding:40px; outline: 0.25px solid black;">
+                <div std-detail></div>
+            </div>
+        </div>
+    </div>
+</div>
