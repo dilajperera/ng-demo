@@ -55,12 +55,6 @@
 </div>
 
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-right"><h5>©Company 2014</h5></div>
-        </div>
-    </div>
-</footer>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
