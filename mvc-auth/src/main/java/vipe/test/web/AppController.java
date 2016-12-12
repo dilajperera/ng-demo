@@ -58,7 +58,7 @@ public class AppController {
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public ModelAndView updateUser(@ModelAttribute("employee") Employee employee) {
         ModelAndView modelView = new ModelAndView();
-        modelView.addObject("selectedEmployee", employeeService.findById(employee.getId()));
+        modelView.addObject("employee", employeeService.findById(employee.getId()));
         modelView.addObject("employees", employeeService.findAllEmployees());
         modelView.setViewName("list");
         return modelView;
@@ -70,6 +70,7 @@ public class AppController {
    */
   @RequestMapping(value = { "/list.html" }, method = RequestMethod.GET)
   public String listUsers(ModelMap model) {
+      model.addAttribute("employee", new Employee());
       model.addAttribute("employees", employeeService.findAllEmployees());
       return "list";
   }

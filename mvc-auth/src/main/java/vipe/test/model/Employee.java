@@ -45,23 +45,23 @@ public class Employee {
 		this.name = name;
 	}
 
-	public int getAge() {
-		return age;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public Double getSalary() {
+        return salary;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
 
-	@Override
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

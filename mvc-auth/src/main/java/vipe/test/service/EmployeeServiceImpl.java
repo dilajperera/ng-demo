@@ -25,7 +25,8 @@ public class EmployeeServiceImpl implements EmployeeService {
   }
 
   public Employee findById(Long id) {
-    return null;
+    Employee employee = employeeRepository.findOne(id);
+    return employee == null ? new Employee() : employee;
   }
 
   public void updateEmployee(Employee employee) {

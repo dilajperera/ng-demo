@@ -61,28 +61,28 @@
         </div>
 
         <div ng-if="showEditPanel" class="col-sm-6" style="padding:40px; outline: 0.25px solid black;">
-            <form:form action="register" method="post"  class="form-horizontal" role="form">
+            <form:form class="form-horizontal" role="form" action="list" method="POST" commandName="employee">
                 <div class="alert alert-success fade in">
                     <strong>Success!</strong> Employee has been updated successfully.
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-3">Name:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Name" required>
+                        <form:input type="text" class="form-control" placeholder="Name" path="name"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-3">Age:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Age" required>
+                        <form:input type="text" class="form-control" placeholder="Age" path="name"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-sm-3">Salary:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Salary" required>
+                        <form:input type="text" class="form-control" placeholder="Salary" path="salary"/>
                     </div>
                 </div>
 

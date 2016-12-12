@@ -10,7 +10,7 @@
                 <li><a href="#/new">New Profile</a></li>
             </ul>
             <ul class="nav navbar-right navbar-nav">
-                <li><a href="#/login">Log out</a></li>
+                <li><a href="<c:url value="/logout" />">Logout</a></li>
             </ul>
         </div>
     </div>
