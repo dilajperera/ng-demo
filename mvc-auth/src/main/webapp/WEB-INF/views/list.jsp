@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -43,8 +44,11 @@
                         <td>${employee.age}</td>
                         <td>${employee.salary}</td>
                         <td>
-                            <button value="Edit" class="btn btn-primary">Edit
-                            </button>
+                            <form:form action="list" method="POST" commandName="employee">
+                                <input type="hidden" name="id" value="${employee.id}" />
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                <button class="btn btn-primary" type="submit" value="Edit">Edit</button>
+                            </form:form>
                         </td>
                         <td>
                             <button type="submit" value="Edit" class="btn btn-primary">Delete
@@ -57,7 +61,37 @@
         </div>
 
         <div ng-if="showEditPanel" class="col-sm-6" style="padding:40px; outline: 0.25px solid black;">
-            <div std-detail></div>
+            <form:form action="register" method="post"  class="form-horizontal" role="form">
+                <div class="alert alert-success fade in">
+                    <strong>Success!</strong> Employee has been updated successfully.
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Age:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Age" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Salary:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Salary" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" value="Save" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form:form>
         </div>
     </div>
 </div>
